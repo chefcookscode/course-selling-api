@@ -79,12 +79,12 @@ export default function CourseDetailClient({ course }: Props) {
                 <Star
                   key={s}
                   className={`h-4 w-4 ${
-                    s <= 5 ? "text-yellow-400 fill-yellow-400" : "text-slate-600"
+                    s <= Math.round(course.rating) ? "text-yellow-400 fill-yellow-400" : "text-slate-600"
                   }`}
                 />
               ))}
             </div>
-            <span className="text-white font-semibold text-sm">4.8</span>
+            <span className="text-white font-semibold text-sm">{course.rating}</span>
             <span className="text-slate-500 text-xs">(2,400+ reviews)</span>
           </div>
         </div>
