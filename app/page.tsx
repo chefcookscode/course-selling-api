@@ -1,4 +1,7 @@
-import Image from "next/image";
+import { courses } from "@/lib/courses";
+import { CourseCard } from "@/components/CourseCard";
+import { Navbar } from "@/components/Navbar";
+import { GraduationCap, Zap, Award } from "lucide-react";
 
 export default function Home() {
   return (
