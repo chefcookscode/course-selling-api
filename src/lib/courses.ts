@@ -12,6 +12,7 @@ export interface Course {
   duration: string;
   level: string;
   badge: string;
+  rating: number;
   syllabus: CourseSyllabus[];
   highlights: string[];
   icon: string;
