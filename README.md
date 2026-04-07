@@ -1,3 +1,6 @@
+[![CI](https://github.com/chefcookscode/course-selling-api/actions/workflows/ci.yml/badge.svg)](https://github.com/chefcookscode/course-selling-api/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

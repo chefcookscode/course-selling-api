@@ -12,6 +12,7 @@ export interface Course {
   duration: string;
   level: string;
   badge: string;
+  rating: number;
   syllabus: CourseSyllabus[];
   highlights: string[];
   icon: string;
@@ -29,6 +30,7 @@ export const courses: Course[] = [
     duration: "3 months",
     level: "Intermediate",
     badge: "Bestseller",
+    rating: 4.8,
     icon: "⚡",
     highlights: [
       "Build 5 real-world projects",
@@ -87,6 +89,7 @@ export const courses: Course[] = [
     duration: "4 months",
     level: "Intermediate",
     badge: "Popular",
+    rating: 4.7,
     icon: "☕",
     highlights: [
       "Spring Boot microservices architecture",
@@ -145,6 +148,7 @@ export const courses: Course[] = [
     duration: "2.5 months",
     level: "Beginner",
     badge: "Hot",
+    rating: 4.9,
     icon: "📊",
     highlights: [
       "Python for data analysis",
@@ -203,6 +207,7 @@ export const courses: Course[] = [
     duration: "4 months",
     level: "Advanced",
     badge: "Trending",
+    rating: 4.9,
     icon: "🤖",
     highlights: [
       "End-to-end ML pipeline development",
@@ -261,6 +266,7 @@ export const courses: Course[] = [
     duration: "3 months",
     level: "Intermediate",
     badge: "New",
+    rating: 4.6,
     icon: "🔌",
     highlights: [
       "Arduino & ESP32 programming",
