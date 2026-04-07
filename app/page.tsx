@@ -36,3 +36,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Courses Grid */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-2">Our Courses</h2>
+            <p className="text-[#8899bb]">Choose a course and start your journey today</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {courses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Footer */}
+      <footer className="mt-auto py-8 text-center text-sm text-[#8899bb] border-t border-[#0d1f3c]">
+        © {new Date().getFullYear()} EduForge. All rights reserved.
+      </footer>
+    </div>
+  );
+}
