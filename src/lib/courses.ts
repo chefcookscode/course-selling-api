@@ -30,6 +30,7 @@ export const courses: Course[] = [
     duration: "3 months",
     level: "Intermediate",
     badge: "Bestseller",
+    rating: 4.8,
     icon: "⚡",
     highlights: [
       "Build 5 real-world projects",
