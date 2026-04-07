@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0f1e;
+  --foreground: #f1f5f9;
+  --card: #0d1526;
+  --border: rgba(255, 255, 255, 0.1);
+  --orange: #ea580c;
+  --orange-light: #fb923c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2a45;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Radix Dialog animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes zoomIn {
+  from { transform: translate(-50%, -48%) scale(0.96); }
+  to { transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes zoomOut {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to { transform: translate(-50%, -48%) scale(0.96); }
+}
+
+.data-\[state\=open\]\:animate-in[data-state=open] {
+  animation: fadeIn 150ms ease;
+}
+.data-\[state\=closed\]\:animate-out[data-state=closed] {
+  animation: fadeOut 150ms ease;
+}
+.data-\[state\=open\]\:zoom-in-95[data-state=open] {
+  animation: zoomIn 150ms ease;
+}
+.data-\[state\=closed\]\:zoom-out-95[data-state=closed] {
+  animation: zoomOut 150ms ease;
+}
