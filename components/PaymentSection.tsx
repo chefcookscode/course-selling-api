@@ -95,3 +95,28 @@ export function PaymentSection({ course }: PaymentSectionProps) {
               />
             </div>
           </div>
+          {/* QR code display */}
+          {qrExpired ? (
+            <div className="flex flex-col items-center gap-3 py-8">
+              <p className="text-red-400 font-semibold">QR Code Expired</p>
+              <Button variant="orange" onClick={() => setStep("qr")}>Generate New QR</Button>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-4">
+              <div className="p-4 bg-white rounded-2xl shadow-lg shadow-orange-900/20 pulse-glow">
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(course.qrData)}`}
+                  alt="Payment QR Code"
+                  width={200}
+                  height={200}
+                  className="rounded-lg"
+                />
+              </div>
+              <p className="text-sm text-[#8899bb] text-center max-w-xs">
+                Open any UPI app (GPay, PhonePe, Paytm) · Scan QR · Pay ₹{course.price.toLocaleString()}
+              </p>
+              <Button variant="orange" onClick={() => setStep("form")}>I have paid — Fill the Form</Button>
+            </div>
+          )}
+        </div>
+      )}
