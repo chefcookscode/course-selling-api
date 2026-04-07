@@ -70,3 +70,28 @@ export function PaymentSection({ course }: PaymentSectionProps) {
           </div>
         </div>
       )}
+
+      {/* Step: QR Code */}
+      {step === "qr" && (
+        <div className="space-y-5">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <QrCode className="w-5 h-5 text-[#e06000]" /> Scan QR to Pay
+            </h3>
+            <button onClick={() => setStep("choose")} className="text-[#8899bb] hover:text-white transition-colors">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+          {/* Timer bar */}
+          <div className="space-y-1">
+            <div className="flex items-center justify-between text-xs text-[#8899bb]">
+              <span className="flex items-center gap-1"><Timer className="w-3.5 h-3.5" /> QR valid for</span>
+              <span className={`font-mono font-bold ${timeLeft < 60 ? "text-red-400" : "text-orange-300"}`}>{fmt(timeLeft)}</span>
+            </div>
+            <div className="w-full h-2 rounded-full bg-[#0d1f3c] overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-1000"
+                style={{ width: `${pct}%`, background: pct > 30 ? "#e06000" : "#ef4444" }}
+              />
+            </div>
+          </div>
