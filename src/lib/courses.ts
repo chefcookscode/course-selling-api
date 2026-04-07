@@ -148,6 +148,7 @@ export const courses: Course[] = [
     duration: "2.5 months",
     level: "Beginner",
     badge: "Hot",
+    rating: 4.9,
     icon: "📊",
     highlights: [
       "Python for data analysis",
@@ -206,6 +207,7 @@ export const courses: Course[] = [
     duration: "4 months",
     level: "Advanced",
     badge: "Trending",
+    rating: 4.9,
     icon: "🤖",
     highlights: [
       "End-to-end ML pipeline development",
@@ -264,6 +266,7 @@ export const courses: Course[] = [
     duration: "3 months",
     level: "Intermediate",
     badge: "New",
+    rating: 4.6,
     icon: "🔌",
     highlights: [
       "Arduino & ESP32 programming",
