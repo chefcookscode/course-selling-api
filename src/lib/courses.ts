@@ -314,6 +314,13 @@ export function getCourseById(id: string): Course | undefined {
   return courses.find((c) => c.id === id);
 }
 
+/**
+ * Generates a time-based QR code URL for UPI payment.
+ * The timestamp bucket changes every 5 minutes, so the QR code
+ * automatically rotates to prevent reuse of stale payment links.
+ * NOTE: This is a client-side freshness mechanism only — actual payment
+ * verification must be confirmed server-side or via the Google Form submission.
+ */
 export function getTimeBasedQRCodeUrl(courseId: string, price: number): string {
   const timestamp = Math.floor(Date.now() / (5 * 60 * 1000)); // changes every 5 minutes
   const upiId = "courses@upi";
@@ -322,4 +329,5 @@ export function getTimeBasedQRCodeUrl(courseId: string, price: number): string {
 }
 
 export const UPI_ID = "courses@upi";
+/** Placeholder — replace with your actual Google Form URL before going live */
 export const GOOGLE_FORM_LINK = "https://forms.google.com/your-form";

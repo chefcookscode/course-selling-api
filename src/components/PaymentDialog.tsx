@@ -36,9 +36,23 @@ export default function PaymentDialog({
   const qrUrl = getTimeBasedQRCodeUrl(courseId, price);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(UPI_ID);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(UPI_ID);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for browsers without clipboard API permission
+      const el = document.createElement("textarea");
+      el.value = UPI_ID;
+      el.style.position = "fixed";
+      el.style.opacity = "0";
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   const handleClose = (open: boolean) => {
