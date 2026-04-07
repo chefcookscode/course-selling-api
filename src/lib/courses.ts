@@ -89,6 +89,7 @@ export const courses: Course[] = [
     duration: "4 months",
     level: "Intermediate",
     badge: "Popular",
+    rating: 4.7,
     icon: "☕",
     highlights: [
       "Spring Boot microservices architecture",
